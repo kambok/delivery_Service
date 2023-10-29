@@ -1,0 +1,19 @@
+{% extends 'appnote1/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6">
+<div class="card card-body">
+        <P>Are you sure you want to delete "{{item}}"?</P>
+        <form action="{%url 'delete_order' item.id %}" method="POST">
+        {% csrf_token %}
+        <a class="btn btn-warning" href="{%url 'home'%}">Cancel</a>
+        <input type="submit" class="btn btn-danger" value="Confirm">
+
+        </form>
+        </div>
+        </div>
+        </div>
+
+{% endblock %}
